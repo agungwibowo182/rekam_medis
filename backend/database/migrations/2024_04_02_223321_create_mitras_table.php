@@ -15,7 +15,6 @@ return new class extends Migration
             $table->id();
             $table->bigInteger('partner_name');
             $table->string('email');
-            $table->string('password');
             $table->timestamps();
         });
     }
