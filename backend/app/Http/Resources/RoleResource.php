@@ -5,12 +5,13 @@ namespace App\Http\Resources;
 use Illuminate\Http\Request;
 use Illuminate\Http\Resources\Json\JsonResource;
 
-class PostResource extends JsonResource
+class RoleResource extends JsonResource
 {
     //define properti
     public $status;
     public $message;
     public $resource;
+
     /**
      * __construct
      *
@@ -25,15 +26,13 @@ class PostResource extends JsonResource
         $this->status  = $status;
         $this->message = $message;
     }
+
     /**
      * Transform the resource into an array.
      *
-     * @return array<string, mixed>
+     * @param  \Illuminate\Http\Request  $request
+     * @return array
      */
-    // public function toArray(Request $request): array
-    // {
-    //     return parent::toArray($request);
-    // }
     public function toArray($request)
     {
         return [

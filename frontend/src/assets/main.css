@@ -1,4 +1,3 @@
-@import './template/dist/plugins/global/plugins.bundle.css';
-@import './template/dist/assets/css/style.bundle.css';
-@import './base.css';
-
+@import 'src/assets/plugins.bundle.css';
+@import 'src/assets/style.bundle.css';
+@import 'src/assets/base.css';

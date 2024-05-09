@@ -33,7 +33,10 @@ class RegisterController extends Controller
         $user = User::create([
             'name'      => $request->name,
             'email'     => $request->email,
-            'password'  => bcrypt($request->password)
+            'password'  => bcrypt($request->password),
+            'role'      => $request->role,
+            'created_by' => $request->name,
+            'updated_by' => ''
         ]);
 
         //return response JSON user is created

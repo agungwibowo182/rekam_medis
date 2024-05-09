@@ -11,11 +11,9 @@ return new class extends Migration
      */
     public function up(): void
     {
-        Schema::create('quis_options', function (Blueprint $table) {
-            $table->id();
-            $table->string('quis_id');
-            $table->string('title');
-            $table->timestamps();
+        Schema::table('clients', function (Blueprint $table) {
+            $table->string('created_by')->after('client_groups');
+            $table->string('updated_by')->after('created_by');
         });
     }
 
@@ -24,6 +22,9 @@ return new class extends Migration
      */
     public function down(): void
     {
-        Schema::dropIfExists('quis_options');
+        Schema::table('clients', function (Blueprint $table) {
+            $table->dropColumn('created_by');
+            $table->dropColumn('updated_by');
+        });
     }
 };

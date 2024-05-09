@@ -11,12 +11,8 @@ return new class extends Migration
      */
     public function up(): void
     {
-        Schema::create('feedback_answers', function (Blueprint $table) {
-            $table->id();
-            $table->string('feedback_id');
-            $table->string('quis_id');
-            $table->text('answer');
-            $table->timestamps();
+        Schema::table('roles', function (Blueprint $table) {
+            $table->string('module')->after('name');
         });
     }
 
@@ -25,6 +21,8 @@ return new class extends Migration
      */
     public function down(): void
     {
-        Schema::dropIfExists('feedback_answers');
+        Schema::table('roles', function (Blueprint $table) {
+            $table->dropColumn('module');
+        });
     }
 };
